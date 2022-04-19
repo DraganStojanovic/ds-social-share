@@ -1,0 +1,97 @@
+.social-share-wrapper div
+{
+    float: left;
+    margin-right: 10px;
+}
+
+.social-share-wrapper div.share-on
+{
+    padding: 5px;
+    font-weight: bold;
+}
+
+.social-share-wrapper div.facebook
+{
+    background-color: #3a5795;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.social-share-wrapper div.facebook a
+{
+    color: white;
+}
+
+.social-share-wrapper div.twitter
+{
+    background-color: #55acee;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.social-share-wrapper div.twitter a
+{
+    color: white;
+}
+
+.social-share-wrapper div.linkedin
+{
+    background-color: #007bb6;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.social-share-wrapper div.linkedin a
+{
+    color: white;
+}
+
+.social-share-wrapper div.google_plus
+{
+    background-color: #DB4437;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.social-share-wrapper div.google_plus a
+{
+    color: white;
+}
+
+.social-share-wrapper div.instagram
+{
+    background-color: #F56040;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+
+.social-share-wrapper div.instagram a
+{
+    color: white;
+}
+
+.social-share-wrapper div a
+{
+    text-decoration: none;
+    border: none;
+}
+
+.clear
+{
+    clear: left;
+}
