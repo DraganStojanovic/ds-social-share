@@ -14,6 +14,12 @@ function ds_social_share()
 
 add_action("admin_menu", "ds_social_share");
 
+//function ds_social_share_color()
+//{
+//    add_submenu_page("options-general.php", "Social Share Color", "Social Share Color", "manage_options", "social-share-color", "social_share_color_page");
+//}
+//
+//add_action("admin_menu", "ds_social_share_color");
 
 
 function social_share_page()
@@ -32,7 +38,66 @@ function social_share_page()
             ?>
         </form>
     </div>
+    <br>
+    <hr>
+    <div class="wrap">
+        <h1>Social Color Sharing Options</h1>
+
+        <form method="post" action="options.php">
+            <?php
+            settings_fields("ss_config_change_color_section");
+
+            do_settings_sections("social-share-color");
+
+            submit_button();
+            ?>
+        </form>
+    </div>
+
+
     <?php
+}
+
+//function social_share_color_page()
+//{
+//    ?>
+<!--    <div class="wrap">-->
+<!--        <h1>Social Color Sharing Options</h1>-->
+<!---->
+<!--        <form method="post" action="options.php">-->
+<!--            --><?php
+//            settings_fields("ss_config_change_color_section");
+//
+//            do_settings_sections("social-share-color");
+//
+//            submit_button();
+//            ?>
+<!--        </form>-->
+<!--    </div>-->
+<!---->
+<!---->
+<!--    --><?php
+//}
+
+
+function social_share_change_color_settings()
+{
+    add_settings_section("ss_config_change_color_section", "", null, "social-share-color");
+
+    add_settings_field("ss-facebook_change_color", "Do you want to change Facebook color?", "social_share_facebook_change_color", "social-share-color", "ss_config_change_color_section");
+    add_settings_field("ss-twitter_change_color", "Do you want to change Twitter color?", "social_share_twitter_change_color", "social-share-color", "ss_config_change_color_section");
+    add_settings_field("ss-linkedin_change_color", "Do you want to change LinkedIn color?", "social_share_linkedin_change_color", "social-share-color", "ss_config_change_color_section");
+    add_settings_field("ss-google_plus_change_color", "Do you want to change Google+ color?", "social_share_google_plus_change_color", "social-share-color", "ss_config_change_color_section");
+    add_settings_field("ss-instagram_change_color", "Do you want to change Instagram color?", "social_share_instagram_change_color", "social-share-color", "ss_config_change_color_section");
+
+    register_setting("ss_config_change_color_section", "ss-facebook_change_color");
+    register_setting("ss_config_change_color_section", "ss-twitter_change_color");
+    register_setting("ss_config_change_color_section", "ss-linkedin_change_color");
+    register_setting("ss_config_change_color_section", "ss-google_plus_change_color");
+    register_setting("ss_config_change_color_section", "ss-instagram_change_color");
+    register_setting("section", "primary_color");
+
+
 }
 
 
@@ -53,28 +118,13 @@ function social_share_settings()
     register_setting("social_share_config_section", "social-share-instagram");
 }
 
-function social_share_change_color_settings()
-{
-    add_settings_section("social_share_config_section", "", null, "social-share");
-
-    add_settings_field("social-share-facebook_change_color", "Do you want to change Facebook color?", "social_share_facebook_change_color", "social-share", "social_share_config_section");
-    add_settings_field("social-share-twitter_change_color", "Do you want to change Twitter color?", "social_share_twitter_change_color", "social-share", "social_share_config_section");
-    add_settings_field("social-share-linkedin_change_color", "Do you want to change LinkedIn color?", "social_share_linkedin_change_color", "social-share", "social_share_config_section");
-    add_settings_field("social-share-google_plus_change_color", "Do you want to change Google+ color?", "social_share_google_plus_change_color", "social-share", "social_share_config_section");
-    add_settings_field("social-share-instagram_change_color", "Do you want to change Instagram color?", "social_share_instagram_change_color", "social-share", "social_share_config_section");
-
-
-    register_setting("section", "primary_color");
-
-
-}
 
 function social_share_facebook_checkbox()
 {
     ?>
     <label>
         <input type="checkbox" name="social-share-facebook" value="1" <?php checked(1, get_option('social-share-facebook'), true); ?> />
-    </label> Check for Yes
+    </label> Check to display
     <br>
 
 
@@ -97,7 +147,7 @@ function social_share_twitter_checkbox()
     ?>
     <label>
         <input type="checkbox" name="social-share-twitter" value="1" <?php checked(1, get_option('social-share-twitter'), true); ?> />
-    </label> Check for Yes
+    </label> Check to display
     <br>
 
     <?php
@@ -118,7 +168,7 @@ function social_share_linkedin_checkbox()
     ?>
     <label>
         <input type="checkbox" name="social-share-linkedin" value="1" <?php checked(1, get_option('social-share-linkedin'), true); ?> />
-    </label> Check for Yes
+    </label> Check to display
     <br>
     <?php
 }
@@ -139,7 +189,7 @@ function social_share_google_plus_checkbox()
     ?>
     <label>
         <input type="checkbox" name="social-share-google_plus" value="1" <?php checked(1, get_option('social-share-google_plus'), true); ?> />
-    </label> Check for Yes
+    </label> Check to display
     <br>
     <br>
 
@@ -161,7 +211,7 @@ function social_share_instagram_checkbox()
     ?>
     <label>
         <input type="checkbox" name="social-share-instagram" value="1" <?php checked(1, get_option('social-share-instagram'), true); ?> />
-    </label> Check for Yes
+    </label> Check to display
     <br>
 
     <?php
