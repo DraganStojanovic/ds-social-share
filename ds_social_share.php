@@ -136,7 +136,7 @@ function social_share_facebook_change_color()
     ?>
     <label>
 <!--        <input type="text" value="#bada55" class="my-color-field" data-default-color="#effeff" />-->
-        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#bada55' ) ); ?>" />
+        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#3a5795' ) ); ?>" />
     </label>
     <?php
 }
@@ -158,7 +158,7 @@ function social_share_twitter_change_color()
     ?>
     <label>
 <!--        <input type="text" value="#bada55" class="my-color-field" data-default-color="#effeff"  />-->
-        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#effeff' ) ); ?>" />
+        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#55acee' ) ); ?>" />
     </label>
     <?php
 }
@@ -178,7 +178,7 @@ function social_share_linkedin_change_color()
     ?>
     <label>
 <!--        <input type="text" value="#bada55" class="my-color-field" data-default-color="#effeff" />-->
-        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#effefh' ) ); ?>" />
+        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#007bb6' ) ); ?>" />
 
     </label>
     <?php
@@ -201,7 +201,7 @@ function social_share_google_plus_change_color()
     ?>
     <label>
 <!--        <input type="text" value="#bada55" class="my-color-field" data-default-color="#effeff" />-->
-        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#eafeff' ) ); ?>" />
+        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#DB4437' ) ); ?>" />
     </label>
     <?php
 }
@@ -222,7 +222,7 @@ function social_share_instagram_change_color()
     ?>
     <label>
 <!--        <input type="text" value="#bada55" class="my-color-field" data-default-color="#effeff" />-->
-        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#efaeff' ) ); ?>" />
+        <input type="text" class="my-color-field" value="<?php echo esc_attr( get_option( 'primary_color', '#F56040' ) ); ?>" />
     </label>
     <?php
 }
@@ -280,8 +280,8 @@ function social_share_style()
 }
 add_action("wp_enqueue_scripts", "social_share_style");
 
+# Not completed. not working properly !!!
 function ds_enqueue_color_picker( $hook_suffix ) {
-    // first check that $hook_suffix is appropriate for your admin page
     wp_enqueue_style( 'wp-color-picker' );
     wp_enqueue_script( 'my-script-handle', plugins_url('my-script.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
 }
